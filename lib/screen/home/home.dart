@@ -1,3 +1,4 @@
+import 'package:doms/assistant_methode/size_config.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -5,6 +6,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return const Placeholder();
   }
 }
