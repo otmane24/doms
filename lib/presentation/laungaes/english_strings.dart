@@ -15,6 +15,10 @@ class EnglishStrings extends GlobalStrings {
   String get signInButton => "Sign in";
   @override
   String get nextButton => "Next";
+  @override
+  String get continueButton => "Continue";
+  @override
+  String get verifyButton => "Verify";
 
   // ------------------- Text Field name -------
   @override
@@ -22,7 +26,7 @@ class EnglishStrings extends GlobalStrings {
   @override
   String get passwordTextField => "Password";
   @override
-  String get confirmPasswordTextField => "Confirm password";
+  String get confirmPasswordTextField => "Confirme password";
 
   // ------------------- On Boarding text -------
   @override
@@ -54,10 +58,41 @@ class EnglishStrings extends GlobalStrings {
   String get dontHaveAccountText => "Don’t have an account ? ";
   @override
   String get haveAccountText => "Already have an account? ";
+  @override
+  String get selectCotactForGetPasswordText =>
+      "Select which contact details should we use to reset your password";
+  @override
+  String get codeSendForGetPasswordText => "Code has been send to ";
+  @override
+  String get reSnedForGetPasswordText => "Resend code in ";
+  @override
+  String get reSendAgainForGetPasswordText => "Resend again";
+  @override
+  String get createNewPasswordText => "Create new password";
 
   // ------------------- App Bar Text -------
   @override
   String get profileDetailsAppBarText => "Profile Details";
+  @override
+  String get forGetPasswordAppBarText => "Forget Password";
+  @override
+  String get resetPasswordAppBarText => "Reset Password";
+
+  // ------------------- Item ForgetPassword Text -------
+  @override
+  String get viaSmsForgetPasswordText => "Via SMS:";
+  @override
+  String get viaEmailForgetPasswordText => "Via Email:";
+
+  // -------------------- Validator Errors -----
+  @override
+  String get champValidatorError => "This field is required*";
+  @override
+  String get passwordValidatorError =>
+      "Your password is invalid, insert at least 8 characters";
+  @override
+  String get confirmePasswordValidatorError =>
+      "Make sure your passwords are the same";
 
   // ------------------- Alert Dialog Text -------
   @override

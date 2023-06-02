@@ -8,6 +8,7 @@ class ColorManager {
   static Color blueText = HexColor.formHex("#09101D");
   static Color hintText = HexColor.formHex("#DADADA");
   static Color borderColor = HexColor.formHex("#DADADA");
+  static Color borderColor2 = HexColor.formHex("#EBEEF2");
   static Color light = HexColor.formHex("#FFFFFF");
   static Color lightGrey = HexColor.formHex("#D9D9D9");
   static Color lightGreyBackgound = HexColor.formHex("#F3F3F3");

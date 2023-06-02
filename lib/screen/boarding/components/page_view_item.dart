@@ -85,7 +85,12 @@ Widget pageViewItem(
                     height: 3.2 * SizeConfig.blockSizeVertical!,
                   ),
                   primaryButton(
-                      onTap: () {}, text: AppLanguage.strings.signUpButton),
+                      onTap: () async {
+                        await HiveBase.hiveBase.setOnBoadringShow(true);
+
+                        Navigator.pushNamed(context, AppRouter.signUpRouter);
+                      },
+                      text: AppLanguage.strings.signUpButton),
                 ],
               ),
             ],

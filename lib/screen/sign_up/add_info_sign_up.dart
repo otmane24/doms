@@ -33,13 +33,6 @@ class _AddInfoSignUpState extends State<AddInfoSignUp> {
   final StateCubit _selectedGender = StateCubit(false);
 
   @override
-  void initState() {
-    // TODOgenderController =
-
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

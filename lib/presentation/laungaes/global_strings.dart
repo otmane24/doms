@@ -7,6 +7,8 @@ abstract class GlobalStrings {
   String get signUpButton;
   String get signInButton;
   String get nextButton;
+  String get continueButton;
+  String get verifyButton;
 
   // ------------------- Text Field name -------
   String get emailTextField;
@@ -28,9 +30,25 @@ abstract class GlobalStrings {
   String get orContinueWithText;
   String get dontHaveAccountText;
   String get haveAccountText;
+  String get selectCotactForGetPasswordText;
+  String get codeSendForGetPasswordText;
+  String get reSnedForGetPasswordText;
+  String get reSendAgainForGetPasswordText;
+  String get createNewPasswordText;
 
   // ------------------- App Bar Text -------
   String get profileDetailsAppBarText;
+  String get forGetPasswordAppBarText;
+  String get resetPasswordAppBarText;
+
+  // ------------------- Item ForgetPassword Text -------
+  String get viaSmsForgetPasswordText;
+  String get viaEmailForgetPasswordText;
+
+  // -------------------- Validator Errors -----
+  String get champValidatorError;
+  String get passwordValidatorError;
+  String get confirmePasswordValidatorError;
 
   // ------------------- Alert Dialog Text -------
   String get choseActionAlertText;

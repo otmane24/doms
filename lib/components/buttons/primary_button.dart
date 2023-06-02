@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../presentation/colors/color_manager.dart';
 
-Widget primaryButton({required Function() onTap, required String text}) {
+Widget primaryButton(
+    {required Function() onTap, required String text, bool enable = false}) {
   return InkWell(
-    onTap: onTap,
+    onTap: enable ? () {} : onTap,
     child: Container(
       height: 55,
       width: double.infinity,
@@ -13,8 +14,12 @@ Widget primaryButton({required Function() onTap, required String text}) {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            ColorManager.secondaryBlue,
-            ColorManager.primaryBlue,
+            enable
+                ? ColorManager.secondaryBlue.withOpacity(.5)
+                : ColorManager.secondaryBlue,
+            enable
+                ? ColorManager.primaryBlue.withOpacity(.5)
+                : ColorManager.primaryBlue,
           ],
         ),
         borderRadius: BorderRadius.circular(32),

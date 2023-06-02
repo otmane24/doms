@@ -4,9 +4,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../assistant_methode/size_config.dart';
 import '../../presentation/colors/color_manager.dart';
+import '../../presentation/laungaes/main.dart';
 
-StateCubit _visibilityPasswordCubit = StateCubit(true);
-Widget obscureTextField({required String name}) {
+Widget obscureTextField({
+  required TextEditingController controller,
+  required String name,
+  TextEditingController? controllerNewPassword,
+}) {
+  StateCubit visibilityPasswordCubit = StateCubit(true);
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -25,14 +30,30 @@ Widget obscureTextField({required String name}) {
         height: 1.2 * SizeConfig.blockSizeVertical!,
       ),
       BlocBuilder<StateCubit, bool>(
-        bloc: _visibilityPasswordCubit,
+        bloc: visibilityPasswordCubit,
         builder: (context, isPasswordVisible) {
           return TextFormField(
+            controller: controller,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return AppLanguage.strings.champValidatorError;
+              }
+              if (value.isNotEmpty && value.length < 8) {
+                return AppLanguage.strings.passwordValidatorError;
+              }
+              if (name == AppLanguage.strings.confirmPasswordTextField &&
+                  controllerNewPassword != null &&
+                  value != controllerNewPassword.text) {
+                return AppLanguage.strings.confirmePasswordValidatorError;
+              }
+
+              return null;
+            },
             cursorColor: ColorManager.primaryBlue,
             obscureText: isPasswordVisible,
             decoration: InputDecoration(
               suffixIcon: IconButton(
-                onPressed: () => _visibilityPasswordCubit.setBlocState(
+                onPressed: () => visibilityPasswordCubit.setBlocState(
                     newState: !isPasswordVisible),
                 icon: Icon(
                   isPasswordVisible ? Icons.visibility_off : Icons.visibility,

@@ -1,5 +1,8 @@
 import 'package:doms/screen/auth/auth.dart';
 import 'package:doms/screen/boarding/boarding_screen.dart';
+import 'package:doms/screen/for_get_password/for_get_password.dart';
+import 'package:doms/screen/for_get_password/opt_code.dart';
+import 'package:doms/screen/reset_password/resert_password.dart';
 import 'package:doms/screen/sign_in/sign_in.dart';
 import 'package:doms/screen/sign_up/add_info_sign_up.dart';
 import 'package:doms/screen/sign_up/sign_up.dart';
@@ -23,15 +26,27 @@ class RouterGenerator {
         );
       case AppRouter.signInRouter:
         return MaterialPageRoute(
-          builder: (_) => const SignInScreen(),
+          builder: (_) => SignInScreen(),
+        );
+      case AppRouter.forGetPasswordRouter:
+        return MaterialPageRoute(
+          builder: (_) => ForGetPassword(),
+        );
+      case AppRouter.optCodeRouter:
+        return MaterialPageRoute(
+          builder: (_) => OtpCode(),
+        );
+      case AppRouter.resetPasswordRouter:
+        return MaterialPageRoute(
+          builder: (_) => ResetPassword(),
         );
       case AppRouter.signUpRouter:
         return MaterialPageRoute(
-          builder: (_) => const SignUpScreen(),
+          builder: (_) => SignUpScreen(),
         );
       case AppRouter.addInfoSignUpRouter:
         return MaterialPageRoute(
-          builder: (_) => AddInfoSignUp(),
+          builder: (_) => const AddInfoSignUp(),
         );
       case AppRouter.homeRouter:
         return MaterialPageRoute(

@@ -11,7 +11,9 @@ import '../../components/text_field/obscure_text_field.dart';
 import '../../routing/app_routing.dart';
 
 class SignInScreen extends StatelessWidget {
-  const SignInScreen({super.key});
+  SignInScreen({super.key});
+
+  TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class SignInScreen extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.symmetric(
             vertical: MediaQuery.of(context).padding.top,
-            horizontal: 3 * SizeConfig.blockSizeVertical!,
+            horizontal: 2.4 * SizeConfig.blockSizeVertical!,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -50,7 +52,9 @@ class SignInScreen extends StatelessWidget {
               SizedBox(
                 height: 1.6 * SizeConfig.blockSizeVertical!,
               ),
-              obscureTextField(name: AppLanguage.strings.passwordTextField),
+              obscureTextField(
+                  name: AppLanguage.strings.passwordTextField,
+                  controller: passwordController),
               SizedBox(
                 height: 4 * SizeConfig.blockSizeVertical!,
               ),
@@ -61,18 +65,22 @@ class SignInScreen extends StatelessWidget {
                 text: AppLanguage.strings.signInButton,
               ),
               SizedBox(
-                height: 2 * SizeConfig.blockSizeVertical!,
+                height: SizeConfig.blockSizeVertical!,
               ),
-              Text(
-                AppLanguage.strings.forGetPasswordText,
-                style: TextStyle(
-                  color: ColorManager.primaryBlue,
-                  fontSize: 1.6 * SizeConfig.blockSizeVertical!,
-                  fontWeight: FontWeight.w500,
+              TextButton(
+                onPressed: () => Navigator.of(context)
+                    .pushNamed(AppRouter.forGetPasswordRouter),
+                child: Text(
+                  AppLanguage.strings.forGetPasswordText,
+                  style: TextStyle(
+                    color: ColorManager.primaryBlue,
+                    fontSize: 1.6 * SizeConfig.blockSizeVertical!,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
               SizedBox(
-                height: 5 * SizeConfig.blockSizeVertical!,
+                height: 2 * SizeConfig.blockSizeVertical!,
               ),
               Text(
                 AppLanguage.strings.orContinueWithText,

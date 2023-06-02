@@ -32,6 +32,10 @@ class MyApp extends StatelessWidget {
             iconTheme: IconThemeData(color: ColorManager.primaryBlue),
           ),
           inputDecorationTheme: InputDecorationTheme(
+            errorStyle: TextStyle(
+              color: ColorManager.redError,
+              fontSize: 1.4 * SizeConfig.blockSizeVertical!,
+            ),
             errorBorder: OutlineInputBorder(
               borderSide: BorderSide(color: ColorManager.redError, width: 1.2),
               borderRadius: BorderRadius.circular(32),

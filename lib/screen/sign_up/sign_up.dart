@@ -10,7 +10,10 @@ import '../../components/text_field/obscure_text_field.dart';
 import '../../routing/app_routing.dart';
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+  SignUpScreen({super.key});
+
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController ConfrimPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -49,12 +52,15 @@ class SignUpScreen extends StatelessWidget {
               SizedBox(
                 height: 1.6 * SizeConfig.blockSizeVertical!,
               ),
-              obscureTextField(name: AppLanguage.strings.passwordTextField),
+              obscureTextField(
+                  name: AppLanguage.strings.passwordTextField,
+                  controller: passwordController),
               SizedBox(
                 height: 1.6 * SizeConfig.blockSizeVertical!,
               ),
               obscureTextField(
-                  name: AppLanguage.strings.confirmPasswordTextField),
+                  name: AppLanguage.strings.confirmPasswordTextField,
+                  controller: ConfrimPasswordController),
               SizedBox(
                 height: 4 * SizeConfig.blockSizeVertical!,
               ),
