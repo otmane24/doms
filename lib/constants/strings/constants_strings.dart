@@ -27,6 +27,51 @@ const momentList = [
   'Morning',
   'Evening',
 ];
+const faqSelectedList = [
+  'General',
+  'Login',
+  'Account',
+  'Appointment',
+  'Doctor',
+];
+
+const faqList = [
+  {
+    'name': 'What is Healthy 24 ?',
+    'answer':
+        'Healthy 24 App is greates tmedicak online consultation app platform in wolrd'
+  },
+  {
+    'name': 'How to Use our app ?',
+    'answer':
+        'Healthy 24 App is greates tmedicak online consultation app platform in wolrd'
+  },
+  {
+    'name': 'How to Use our app ?',
+    'answer':
+        'Healthy 24 App is greates tmedicak online consultation app platform in wolrd'
+  },
+  {
+    'name': 'How to Use our app ?',
+    'answer':
+        'Healthy 24 App is greates tmedicak online consultation app platform in wolrd'
+  },
+  {
+    'name': 'How to Use our app ?',
+    'answer':
+        'Healthy 24 App is greates tmedicak online consultation app platform in wolrd'
+  },
+  {
+    'name': 'How to Use our app ?',
+    'answer':
+        'Healthy 24 App is greates tmedicak online consultation app platform in wolrd'
+  },
+  {
+    'name': 'How to Use our app ?',
+    'answer':
+        'Healthy 24 App is greates tmedicak online consultation app platform in wolrd'
+  },
+];
 
 const rangeAgeList = [
   '1 - 17',

@@ -1,5 +1,6 @@
 import 'package:doms/components/alert_dialog/take_appointment.dart';
 import 'package:doms/components/buttons/primary_button.dart';
+import 'package:doms/components/card/selected_item.dart';
 import 'package:doms/components/text_field/multi_line_text_field.dart';
 import 'package:doms/components/text_field/primary_text_field.dart';
 import 'package:doms/constants/strings/constants_strings.dart';
@@ -72,13 +73,13 @@ class PatientDetail extends StatelessWidget {
                             horizontal: 2.4 * SizeConfig.blockSizeVertical!),
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
-                          return rangeAgeItem(
+                          return selectedItem(
                               onTap: () {
                                 _selectedGrangeAge.setBlocState(
                                     newState: !rangeAgeState);
                                 grangeAgeSelected = rangeAgeList[index];
                               },
-                              rangeAge: rangeAgeList[index],
+                              text: rangeAgeList[index],
                               isSelected:
                                   grangeAgeSelected == rangeAgeList[index]);
                         },
@@ -192,38 +193,6 @@ class PatientDetail extends StatelessWidget {
                     text: AppLanguage.strings.nextButton),
               )
             ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget rangeAgeItem({
-    required String rangeAge,
-    required bool isSelected,
-    required Function() onTap,
-  }) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        padding: EdgeInsets.symmetric(
-            horizontal: 2 * SizeConfig.blockSizeVertical!,
-            vertical: 0.8 * SizeConfig.blockSizeVertical!),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(24),
-          color: isSelected
-              ? ColorManager.primaryBlue
-              : ColorManager.lightGreyBackgound,
-          border: Border.all(color: ColorManager.primaryBlue, width: 1.5),
-        ),
-        child: Center(
-          child: Text(
-            rangeAge,
-            style: TextStyle(
-              fontSize: 1.8 * SizeConfig.blockSizeVertical!,
-              fontWeight: FontWeight.w600,
-              color: isSelected ? ColorManager.light : ColorManager.primaryBlue,
-            ),
           ),
         ),
       ),

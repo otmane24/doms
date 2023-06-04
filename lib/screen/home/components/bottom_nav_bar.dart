@@ -14,7 +14,6 @@ Widget bottomNavBar(
 
     width: MediaQuery.of(context).size.width,
     decoration: BoxDecoration(
-      color: ColorManager.light,
       boxShadow: [
         BoxShadow(
           blurRadius: 20,
@@ -33,7 +32,7 @@ Widget bottomNavBar(
         haptic: true,
         tabBorderRadius: 12,
         tabMargin: EdgeInsets.all(1.6 * SizeConfig.blockSizeVertical!),
-        backgroundColor: ColorManager.light,
+        backgroundColor: ColorManager.bottomBackgound,
         tabShadow: [
           BoxShadow(
               color: ColorManager.primaryBlue.withOpacity(0.1), blurRadius: 1)

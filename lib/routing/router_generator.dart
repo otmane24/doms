@@ -1,14 +1,23 @@
+import 'package:doms/screen/appearance/appearance.dart';
 import 'package:doms/screen/appointment/appointment.dart';
 import 'package:doms/screen/auth/auth.dart';
 import 'package:doms/screen/boarding/boarding_screen.dart';
+import 'package:doms/screen/help/contact_us/contact_us.dart';
 import 'package:doms/screen/detail_doctor/detail_doctor.dart';
+import 'package:doms/screen/help/faq/faq.dart';
 import 'package:doms/screen/favorite_doctor/favorite_dotcor.dart';
 import 'package:doms/screen/for_get_password/for_get_password.dart';
 import 'package:doms/screen/for_get_password/opt_code.dart';
+import 'package:doms/screen/help/help.dart';
+import 'package:doms/screen/help/privacy_policy/privacy_policy.dart';
+import 'package:doms/screen/help/term_condition/term_condition.dart';
+import 'package:doms/screen/invite_friend/invite_friend.dart';
 import 'package:doms/screen/notification/notification.dart';
+import 'package:doms/screen/notification/notification_setting.dart';
 import 'package:doms/screen/patient_detail/patient_detail.dart';
 import 'package:doms/screen/profile/profile.dart';
 import 'package:doms/screen/reset_password/resert_password.dart';
+import 'package:doms/screen/security/security.dart';
 import 'package:doms/screen/sign_in/sign_in.dart';
 import 'package:doms/screen/sign_up/add_info_sign_up.dart';
 import 'package:doms/screen/sign_up/sign_up.dart';
@@ -99,6 +108,42 @@ class RouterGenerator {
       case AppRouter.profileRouter:
         return MaterialPageRoute(
           builder: (_) => const Profile(),
+        );
+      case AppRouter.notificationSettingRouter:
+        return MaterialPageRoute(
+          builder: (_) => NotificationSetting(),
+        );
+      case AppRouter.securitySettingRouter:
+        return MaterialPageRoute(
+          builder: (_) => SecuritySetting(),
+        );
+      case AppRouter.appearanceSettingRouter:
+        return MaterialPageRoute(
+          builder: (_) => AppearanceSetting(),
+        );
+      case AppRouter.helpSettingRouter:
+        return MaterialPageRoute(
+          builder: (_) => const HelpSetting(),
+        );
+      case AppRouter.faqRouter:
+        return MaterialPageRoute(
+          builder: (_) => Faq(),
+        );
+      case AppRouter.contactUsRouter:
+        return MaterialPageRoute(
+          builder: (_) => const ContactUs(),
+        );
+      case AppRouter.termConditionRouter:
+        return MaterialPageRoute(
+          builder: (_) => const TermCondition(),
+        );
+      case AppRouter.privacyPolicyRouter:
+        return MaterialPageRoute(
+          builder: (_) => const PrivacyPolicy(),
+        );
+      case AppRouter.inviteFriendRouter:
+        return MaterialPageRoute(
+          builder: (_) => const InviteFriend(),
         );
       default:
         return MaterialPageRoute(

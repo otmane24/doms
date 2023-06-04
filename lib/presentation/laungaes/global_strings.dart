@@ -12,6 +12,8 @@ abstract class GlobalStrings {
   String get cancelButton;
   String get yesRemoveButton;
   String get bookAppointmentButton;
+  String get sendMessageButton;
+  String get yesLogoutButton;
 
   // ------------------- Text Field name -------
   String get emailTextField;
@@ -51,6 +53,11 @@ abstract class GlobalStrings {
   String get eveningText;
   String get chooseHourText;
   String get feeInformationText;
+  String get termConditionText;
+  String get privacyPolicyText;
+  String get inviteText;
+  String get invitedText;
+  String get confirmLogoutText;
 
   // ------------------- App Bar Text -------
   String get profileDetailsAppBarText;
@@ -64,10 +71,38 @@ abstract class GlobalStrings {
   String get bookAppointmentAppBarText;
   String get detailPatientAppBarText;
   String get profileAppBarText;
+  String get securityAppBarText;
+  String get appearanceAppBarText;
+  String get helpAppBarText;
+  String get faqAppBarText;
+  String get contactUsAppBarText;
+  String get termConditionAppBarText;
+  String get privacyPolicyAppBarText;
+  String get inviteFriendAppBarText;
 
   // ------------------- Item ForgetPassword Text -------
   String get viaSmsForgetPasswordText;
   String get viaEmailForgetPasswordText;
+
+  // ------------------- Item Profile Text -------
+  String get notificationProfileText;
+  String get securityProfileText;
+  String get appearanceProfileText;
+  String get helpProfileText;
+  String get invitefriendsProfileText;
+  String get logoutProfileText;
+
+  // ------------------- Item Notification Setting Text -------
+  String get notificationNotificationSettingText;
+  String get vibrateNotificationSettingText;
+  String get tipsAvailableNotificationSettingText;
+  String get serviceAvailbleNotificationSettingText;
+
+  // ------------------- Item Help  Text -------
+  String get FaqHelpText;
+  String get contactUsHelpText;
+  String get termConditionHelpText;
+  String get privacyPolicyHelpText;
 
   // ------------------- Item Fee Information Text -------
   String get messagingFeeInformationText;

@@ -16,4 +16,13 @@ class AppRouter {
   static const String appointmentRouter = '/appointmentRouter';
   static const String patientDetailRouter = '/patientDetailRouter';
   static const String profileRouter = '/profileRouter';
+  static const String notificationSettingRouter = '/notificationSettingRouter';
+  static const String securitySettingRouter = '/securitySettingRouter';
+  static const String appearanceSettingRouter = '/appearanceSettingRouter';
+  static const String helpSettingRouter = '/helpSettingRouter';
+  static const String faqRouter = '/faqRouter';
+  static const String contactUsRouter = '/contactUsRouter';
+  static const String termConditionRouter = '/termConditionRouter';
+  static const String privacyPolicyRouter = '/privacyPolicyRouter';
+  static const String inviteFriendRouter = '/inviteFriendRouter';
 }

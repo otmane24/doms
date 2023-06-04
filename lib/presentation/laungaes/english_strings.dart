@@ -25,6 +25,10 @@ class EnglishStrings extends GlobalStrings {
   String get yesRemoveButton => "Yes, Remove";
   @override
   String get bookAppointmentButton => "Book Appointment";
+  @override
+  String get sendMessageButton => "Send Message";
+  @override
+  String get yesLogoutButton => "Yes, Logout";
 
   // ------------------- Text Field name -------
   @override
@@ -101,6 +105,18 @@ class EnglishStrings extends GlobalStrings {
   String get chooseHourText => "Choose the Hour";
   @override
   String get feeInformationText => "Fee Information";
+  @override
+  String get termConditionText =>
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+  @override
+  String get privacyPolicyText =>
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+  @override
+  String get inviteText => "Invite";
+  @override
+  String get invitedText => "Invited";
+  @override
+  String get confirmLogoutText => "Are you sure want to logout";
 
   // ------------------- App Bar Text -------
   @override
@@ -125,12 +141,62 @@ class EnglishStrings extends GlobalStrings {
   String get detailPatientAppBarText => "Patient Details";
   @override
   String get profileAppBarText => "Profile";
+  @override
+  String get securityAppBarText => "Security";
+  @override
+  String get appearanceAppBarText => "Appearance";
+  @override
+  String get helpAppBarText => "Help";
+  @override
+  String get faqAppBarText => "FAQ";
+  @override
+  String get contactUsAppBarText => "Contact Us";
+  @override
+  String get termConditionAppBarText => "Term and condition";
+  @override
+  String get privacyPolicyAppBarText => "Privacy Policy";
+  @override
+  String get inviteFriendAppBarText => "Invite Friends";
 
   // ------------------- Item ForgetPassword Text -------
   @override
   String get viaSmsForgetPasswordText => "Via SMS:";
   @override
   String get viaEmailForgetPasswordText => "Via Email:";
+
+  // ------------------- Item Profile Text -------
+  @override
+  String get notificationProfileText => "Notification";
+  @override
+  String get securityProfileText => "Security";
+  @override
+  String get appearanceProfileText => "Appearance";
+  @override
+  String get helpProfileText => "Help";
+  @override
+  String get invitefriendsProfileText => "Invite Friends";
+  @override
+  String get logoutProfileText => "Logout";
+
+  // ------------------- Item Help  Text -------
+  @override
+  String get FaqHelpText => "FAQ";
+  @override
+  String get contactUsHelpText => "Contact us";
+  @override
+  String get termConditionHelpText => "Term & Condition";
+  @override
+  String get privacyPolicyHelpText => "Privacy Policy";
+
+  // ------------------- Item Notification Setting Text -------
+  @override
+  String get notificationNotificationSettingText => "Notification";
+  @override
+  String get vibrateNotificationSettingText => "Vibrate";
+  @override
+  String get tipsAvailableNotificationSettingText => "New tips available";
+  @override
+  String get serviceAvailbleNotificationSettingText => "New service Availble";
 
   // ------------------- Item Fee Information Text -------
   @override

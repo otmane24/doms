@@ -19,6 +19,7 @@ class ColorManager {
   static Color light = HexColor.formHex("#FFFFFF");
   static Color lightGrey = HexColor.formHex("#D9D9D9");
   static Color lightGreyBackgound = HexColor.formHex("#F3F3F3");
+  static Color bottomBackgound = HexColor.formHex("#FEFEFE");
   static Color textFieldBackgound = HexColor.formHex("#F4F6F9");
   static Color darkGrey = HexColor.formHex("#979797");
   static Color onBoradingBackground1 = HexColor.formHex("#93B8FE");

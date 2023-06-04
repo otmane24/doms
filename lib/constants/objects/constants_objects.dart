@@ -2,6 +2,7 @@ import 'package:doms/constants/strings/constants_strings.dart';
 import 'package:doms/presentation/colors/color_manager.dart';
 import 'package:doms/presentation/laungaes/main.dart';
 import 'package:doms/screen/appointment/components/fee_information_object.dart';
+import 'package:doms/screen/invite_friend/components/friend_object.dart';
 import 'package:doms/screen/notification/components/notification_object.dart';
 
 import '../../screen/boarding/components/slider_objects.dart';
@@ -268,4 +269,76 @@ List<FeeInformationObject> feeInfomationObjectList = [
     subTitle: AppLanguage.strings.videoCallDescriptionFeeInformationText,
     price: '\$20',
   ),
+];
+List<FriendObject> friendObjectList = [
+  FriendObject(
+      name: 'Dr. Eleanor Pena',
+      avatar: '$pngsPath/friend1.png',
+      isInvited: false,
+      phone: '+213 5648-756-458'),
+  FriendObject(
+      name: 'Dr. Eleanor Pena',
+      avatar: '$pngsPath/friend2.png',
+      isInvited: true,
+      phone: '+213 5648-756-458'),
+  FriendObject(
+      name: 'Dr. Eleanor Pena',
+      avatar: '$pngsPath/friend3.png',
+      isInvited: true,
+      phone: '+213 5648-756-458'),
+  FriendObject(
+      name: 'Dr. Eleanor Pena',
+      avatar: '$pngsPath/friend4.png',
+      isInvited: false,
+      phone: '+213 5648-756-458'),
+  FriendObject(
+      name: 'Dr. Eleanor Pena',
+      avatar: '$pngsPath/friend5.png',
+      isInvited: true,
+      phone: '+213 5648-756-458'),
+  FriendObject(
+      name: 'Dr. Eleanor Pena',
+      avatar: '$pngsPath/friend6.png',
+      isInvited: true,
+      phone: '+213 5648-756-458'),
+  FriendObject(
+      name: 'Dr. Eleanor Pena',
+      avatar: '$pngsPath/friend7.png',
+      isInvited: false,
+      phone: '+213 5648-756-458'),
+  FriendObject(
+      name: 'Dr. Eleanor Pena',
+      avatar: '$pngsPath/friend1.png',
+      isInvited: false,
+      phone: '+213 5648-756-458'),
+  FriendObject(
+      name: 'Dr. Eleanor Pena',
+      avatar: '$pngsPath/friend2.png',
+      isInvited: true,
+      phone: '+213 5648-756-458'),
+  FriendObject(
+      name: 'Dr. Eleanor Pena',
+      avatar: '$pngsPath/friend3.png',
+      isInvited: true,
+      phone: '+213 5648-756-458'),
+  FriendObject(
+      name: 'Dr. Eleanor Pena',
+      avatar: '$pngsPath/friend4.png',
+      isInvited: false,
+      phone: '+213 5648-756-458'),
+  FriendObject(
+      name: 'Dr. Eleanor Pena',
+      avatar: '$pngsPath/friend5.png',
+      isInvited: true,
+      phone: '+213 5648-756-458'),
+  FriendObject(
+      name: 'Dr. Eleanor Pena',
+      avatar: '$pngsPath/friend6.png',
+      isInvited: true,
+      phone: '+213 5648-756-458'),
+  FriendObject(
+      name: 'Dr. Eleanor Pena',
+      avatar: '$pngsPath/friend7.png',
+      isInvited: false,
+      phone: '+213 5648-756-458'),
 ];
