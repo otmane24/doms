@@ -60,7 +60,8 @@ class SignInScreen extends StatelessWidget {
               ),
               primaryButton(
                 onTap: () {
-                  // Navigator.pushNamed(context, AppRouter.signInRouter);
+                  Navigator.of(context)
+                      .pushReplacementNamed(AppRouter.homeRouter);
                 },
                 text: AppLanguage.strings.signInButton,
               ),

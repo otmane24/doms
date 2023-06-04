@@ -7,6 +7,7 @@ Widget primaryTextField(
     {TextEditingController? controller,
     required String name,
     bool? enabled,
+    Color? color,
     Widget? suffixIcon}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,6 +30,8 @@ Widget primaryTextField(
         enabled: enabled,
         cursorColor: ColorManager.primaryBlue,
         decoration: InputDecoration(
+          fillColor: color,
+          filled: color != null,
           suffixIcon: suffixIcon,
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 24, vertical: 20),

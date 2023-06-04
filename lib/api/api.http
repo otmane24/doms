@@ -1,0 +1,75 @@
+@baseURL =  https://647bc2afc0bae2880ad03c30.mockapi.io
+
+get {{ baseURL }}/Doctor
+content-type: application/json
+
+
+###
+
+get {{ baseURL }}/Patient   
+content-type: application/json
+
+
+###
+ post {{ baseURL }}/auth/login
+content-type: application/json
+
+
+{
+   
+    "email": "patient@docta.io",
+    "password": "abdo@123"
+          }
+###
+### GET ALL
+get {{ baseURL }}/contact
+docta-local: en
+Authorization: {{ token }}
+
+###
+### GET ALL
+get {{ baseURL }}/m/appointment/all
+docta-local: en
+Authorization: {{ token }}
+
+###
+
+### GET ALL
+get {{ baseURL }}/m/medicalacts?page=1&limit=50
+docta-local: en
+Authorization: {{ token }}
+
+###
+
+
+### GET ALL
+get {{ baseURL }}/m/patient/measure
+docta-local: en
+Authorization: {{ token }}
+
+#
+###
+
+### GET ALL
+get {{ baseURL }}/m/doctor/3ee291fb-5315-4dd3-8afd-a9f05ded59d3
+docta-local: en
+Authorization: {{ token }}
+
+###
+### GET ALL
+get {{ baseURL }}/m/patient/measure
+docta-local: en
+Authorization: {{ token }}
+
+
+###
+
+###
+
+### GET ALL
+get {{ baseURL }}/m/patient/symptom
+docta-local: en
+Authorization: {{ token }}
+
+
+###/

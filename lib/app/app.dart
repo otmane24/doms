@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: AppLanguage.strings.nameApp,
       theme: ThemeData(
-          scaffoldBackgroundColor: ColorManager.light,
+          scaffoldBackgroundColor: ColorManager.lightGreyBackgound,
           appBarTheme: AppBarTheme(
             titleTextStyle: TextStyle(
                 color: ColorManager.blueText,

@@ -96,7 +96,7 @@ showGenderPickerDialog({
                     ]),
                 child: Center(
                     child: Text(
-                  AppLanguage.strings.galerieAlertText,
+                  'Femme',
                   style: TextStyle(
                     fontSize: 1.8 * SizeConfig.blockSizeVertical!,
                     fontWeight: FontWeight.w500,

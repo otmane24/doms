@@ -14,3 +14,36 @@ const boardingHiveKey = "BoardingKey";
 // Path assets
 const pngsPath = 'assets/pngs';
 const svgsPath = 'assets/svgs';
+
+// speciality list
+const specialityList = [
+  'All',
+  'Brain',
+  'Cardio',
+  'Eye',
+];
+
+const momentList = [
+  'Morning',
+  'Evening',
+];
+
+const rangeAgeList = [
+  '1 - 17',
+  '18 - 24',
+  '25 - 45',
+  '46 - 70',
+  '+70',
+];
+
+const timeList = [
+  '9:00 AM',
+  '10:00 AM',
+  '11:00 AM',
+  '13:00 PM',
+  '14:00 PM',
+  '15:00 PM',
+  '16:00 PM',
+  '17:00 PM',
+  '18:00 PM',
+];

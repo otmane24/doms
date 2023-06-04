@@ -19,6 +19,12 @@ class EnglishStrings extends GlobalStrings {
   String get continueButton => "Continue";
   @override
   String get verifyButton => "Verify";
+  @override
+  String get cancelButton => "Cacnel";
+  @override
+  String get yesRemoveButton => "Yes, Remove";
+  @override
+  String get bookAppointmentButton => "Book Appointment";
 
   // ------------------- Text Field name -------
   @override
@@ -27,6 +33,10 @@ class EnglishStrings extends GlobalStrings {
   String get passwordTextField => "Password";
   @override
   String get confirmPasswordTextField => "Confirme password";
+  @override
+  String get fullNameTextField => "Full Name";
+  @override
+  String get phoneTextField => "Phone";
 
   // ------------------- On Boarding text -------
   @override
@@ -45,7 +55,7 @@ class EnglishStrings extends GlobalStrings {
   String get onBoardingSubTitle3 =>
       'You can easily contact with a thousands of doctors and contacrt for youe needs';
 
-  // ------------------- text -------
+  // ------------------- Text -------
   @override
   String get signUpText => "Sign Up";
   @override
@@ -69,6 +79,28 @@ class EnglishStrings extends GlobalStrings {
   String get reSendAgainForGetPasswordText => "Resend again";
   @override
   String get createNewPasswordText => "Create new password";
+  @override
+  String get findText => "Find ";
+  @override
+  String get yourDoctorText => "your doctor";
+  @override
+  String get specialDoctorText => "Special doctor";
+  @override
+  String get topDoctorText => "Top doctor";
+  @override
+  String get todayText => "Today";
+  @override
+  String get yesterdayText => "Yesterday";
+  @override
+  String get removeFavoriteText => "Remove from favoeite ?";
+  @override
+  String get morningText => "Morning";
+  @override
+  String get eveningText => "Evening";
+  @override
+  String get chooseHourText => "Choose the Hour";
+  @override
+  String get feeInformationText => "Fee Information";
 
   // ------------------- App Bar Text -------
   @override
@@ -77,12 +109,45 @@ class EnglishStrings extends GlobalStrings {
   String get forGetPasswordAppBarText => "Forget Password";
   @override
   String get resetPasswordAppBarText => "Reset Password";
+  @override
+  String get homeAppBarText => "Doctorek";
+  @override
+  String get notificationAppBarText => "Notifications";
+  @override
+  String get favoriteDoctorAppBarText => "Favorite Doctor";
+  @override
+  String get topDoctorAppBarText => "Top Doctors";
+  @override
+  String get specialAppBarText => "Specialist Doctor";
+  @override
+  String get bookAppointmentAppBarText => "Book Appointment";
+  @override
+  String get detailPatientAppBarText => "Patient Details";
+  @override
+  String get profileAppBarText => "Profile";
 
   // ------------------- Item ForgetPassword Text -------
   @override
   String get viaSmsForgetPasswordText => "Via SMS:";
   @override
   String get viaEmailForgetPasswordText => "Via Email:";
+
+  // ------------------- Item Fee Information Text -------
+  @override
+  String get messagingFeeInformationText => "Messaging";
+  @override
+  String get messagingDescriptionFeeInformationText =>
+      "Can messaging with doctor";
+  @override
+  String get voiceCallFeeInformationText => "Voice Call";
+  @override
+  String get voiceCallDescriptionFeeInformationText =>
+      "Can make a voice call with doctor";
+  @override
+  String get videoCallFeeInformationText => "Video Call";
+  @override
+  String get videoCallDescriptionFeeInformationText =>
+      "Can make a video call with doctor";
 
   // -------------------- Validator Errors -----
   @override
