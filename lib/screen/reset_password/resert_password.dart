@@ -62,7 +62,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                   onTap: () {
                     if (_formKey.currentState!.validate()) {
                       Navigator.of(context)
-                          .pushReplacementNamed(AppRouter.homeRouter);
+                          .pushReplacementNamed(AppRouter.mainScreenRouter);
                     }
                   },
                   text: AppLanguage.strings.continueButton)

@@ -12,6 +12,7 @@ import 'components/all_specialty_item.dart';
 class ViewAllSpecial extends StatelessWidget {
   ViewAllSpecial({super.key});
   FocusNode focusNode = FocusNode();
+  final TextEditingController _searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +25,7 @@ class ViewAllSpecial extends StatelessWidget {
         actions: [
           Padding(
             padding: EdgeInsets.symmetric(
-                vertical: .5 * SizeConfig.blockSizeVertical!,
+                vertical: .8 * SizeConfig.blockSizeVertical!,
                 horizontal: 1.5 * SizeConfig.blockSizeVertical!),
             child:
                 cardIconButton(imagePath: '$svgsPath/filtre.svg', onTap: () {}),
@@ -37,7 +38,10 @@ class ViewAllSpecial extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 2.4 * SizeConfig.blockSizeVertical!),
-            searchTextField(focusNode: focusNode),
+            searchTextField(
+              controller: _searchController,
+              focusNode: focusNode,
+            ),
             SizedBox(height: 2.4 * SizeConfig.blockSizeVertical!),
             Expanded(
               child: GridView.builder(

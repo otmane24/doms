@@ -62,8 +62,9 @@ Widget obscureTextField({
                       : ColorManager.primaryBlue,
                 ),
               ),
-              contentPadding:
-                  const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+              contentPadding: EdgeInsets.symmetric(
+                  horizontal: 24,
+                  vertical: 1.2 * SizeConfig.blockSizeVertical!),
               hintText: name,
               hintStyle: TextStyle(color: ColorManager.hintText),
               border: OutlineInputBorder(

@@ -5,9 +5,9 @@ import 'package:doms/screen/appointment/components/fee_information_object.dart';
 import 'package:doms/screen/invite_friend/components/friend_object.dart';
 import 'package:doms/screen/notification/components/notification_object.dart';
 
+import '../../models/doctor.dart';
 import '../../screen/boarding/components/slider_objects.dart';
 import '../../screen/home/components/special_doctor_object.dart';
-import '../../screen/home/components/top_doctor_object.dart';
 
 List<SliderObjet> sliderObjetList = [
   SliderObjet(
@@ -89,105 +89,97 @@ List<SpecialDoctorObject> specialDoctorObjectList = [
   ),
 ];
 
-List<DoctorObject> topDoctorObjectList = [
-  DoctorObject(
+List<Doctor> topDoctorObjectList = [
+  Doctor(
       imagePath: '$pngsPath/doctor1.png',
       name: 'Dr. Bellamy N',
       specialty: 'Viralogist',
-      vote_average: '4.5',
-      vote_count: '135',
+      vote_count: 13,
       is_online: true),
-  DoctorObject(
+  Doctor(
       imagePath: '$pngsPath/doctor2.png',
       name: 'Dr. Mensah T',
       specialty: 'Oncologists',
-      vote_average: '4.3',
-      vote_count: '130',
+      vote_count: 130,
       is_online: false),
-  DoctorObject(
+  Doctor(
       imagePath: '$pngsPath/doctor3.png',
       name: 'Dr. Klimisch J',
       specialty: 'Surgeon',
-      vote_average: '4.5',
-      vote_count: '135',
+      vote_count: 135,
       is_online: false),
-  DoctorObject(
+  Doctor(
       imagePath: '$pngsPath/doctor4.png',
       name: 'Dr. Martinez K',
       specialty: 'Pediatrician',
-      vote_average: '4.3',
-      vote_count: '130',
+      vote_count: 130,
       is_online: false),
-  DoctorObject(
+  Doctor(
       imagePath: '$pngsPath/doctor5.png',
       name: 'Dr. Marc M',
       specialty: 'Rheumatologists',
-      vote_average: '4.3',
-      vote_count: '130',
+      vote_count: 130,
       is_online: false),
-  DoctorObject(
+  Doctor(
       imagePath: '$pngsPath/doctor6.png',
       name: 'Dr. O’Boyle J',
       specialty: 'Radiologists',
-      vote_average: '4.5',
-      vote_count: '135',
+      vote_count: 135,
       is_online: true),
-  DoctorObject(
+  Doctor(
       imagePath: '$pngsPath/doctor2.png',
       name: 'Dr. Mensah T',
       specialty: 'Oncologists',
-      vote_average: '4.3',
-      vote_count: '130',
+      vote_count: 130,
       is_online: false),
-  DoctorObject(
+  Doctor(
       imagePath: '$pngsPath/doctor1.png',
       name: 'Dr. Bellamy N',
       specialty: 'Viralogist',
-      vote_average: '4.5',
-      vote_count: '135',
+      vote_count: 135,
       is_online: true),
 ];
-List<DoctorObject> topDoctorObjectList2 = [
-  DoctorObject(
+List<Doctor> topDoctorObjectList2 = [
+  Doctor(
+      id: '1',
       imagePath: '$pngsPath/doctors1.png',
       name: 'Dr. Bellamy N',
       specialty: 'Viralogist',
-      vote_average: '4.5',
-      vote_count: '135',
+      vote_count: 135,
       is_online: true,
       description: 'Cardio specialistr - Oran Hospital'),
-  DoctorObject(
+  Doctor(
+      id: '2',
       imagePath: '$pngsPath/doctors2.png',
       name: 'Dr. Mensah T',
       specialty: 'Oncologists',
-      vote_average: '4.3',
-      vote_count: '130',
+      vote_count: 130,
       is_online: false,
       description: 'Cardio specialistr - Oran Hospital',
       is_like: false),
-  DoctorObject(
+  Doctor(
+      id: '3',
       imagePath: '$pngsPath/doctors3.png',
       name: 'Dr. Klimisch J',
       specialty: 'Surgeon',
-      vote_average: '4.5',
-      vote_count: '135',
+      vote_count: 135,
       is_online: false,
       description: 'Cardio specialistr - Oran Hospital'),
-  DoctorObject(
+  Doctor(
+      id: '4',
       imagePath: '$pngsPath/doctors4.png',
       name: 'Dr. Martinez K',
       specialty: 'Pediatrician',
-      vote_average: '4.3',
-      vote_count: '130',
+      vote_count: 130,
       is_online: false,
       description: 'Cardio specialistr - Oran Hospital',
       is_like: false),
-  DoctorObject(
+  Doctor(
+      id: '5',
       imagePath: '$pngsPath/doctors5.png',
       name: 'Dr. Marc M',
       specialty: 'Rheumatologists',
-      vote_average: '4.3',
-      vote_count: '130',
+      vote_count: 130,
       is_online: false,
       description: 'Cardio specialistr - Oran Hospital',
       is_like: false),

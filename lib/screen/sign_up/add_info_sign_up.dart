@@ -3,17 +3,21 @@ import 'dart:io';
 import 'package:doms/businnes_logic/cubit/state_cubit.dart';
 import 'package:doms/components/alert_dialog/gender_picker.dart';
 import 'package:doms/components/alert_dialog/progresse_indicator.dart';
-import 'package:doms/components/text_field/primary_text_field.dart';
 import 'package:doms/presentation/colors/color_manager.dart';
 import 'package:doms/presentation/laungaes/main.dart';
+import 'package:doms/routing/app_routing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:intl/intl.dart';
 
 import '../../assistant_methode/size_config.dart';
+import '../../businnes_logic/cubit/app_language_cubit.dart';
 import '../../components/alert_dialog/image_picker.dart';
 import '../../components/buttons/primary_button.dart';
+import '../../components/text_field/primary_text_field.dart';
 import '../../constants/strings/constants_strings.dart';
 
 class AddInfoSignUp extends StatefulWidget {
@@ -28,14 +32,25 @@ class _AddInfoSignUpState extends State<AddInfoSignUp> {
 
   String gendreSelected = 'Homme';
 
+  String? brithDaySelected;
+
   final StateCubit _takePicture = StateCubit(false);
 
   final StateCubit _selectedGender = StateCubit(false);
+  final StateCubit _selectedBrithDay = StateCubit(false);
+
+  final TextEditingController _fullNameController = TextEditingController();
+  final TextEditingController _genderController =
+      TextEditingController(text: 'Homme');
+  final TextEditingController _brithDayController = TextEditingController();
+  final TextEditingController _addressController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    initializeDateFormatting(context.read<AppLanguageCubit>().state, null);
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: ColorManager.lightGreyBackgound,
         title: Text(AppLanguage.strings.profileDetailsAppBarText),
       ),
       body: SingleChildScrollView(
@@ -105,13 +120,16 @@ class _AddInfoSignUpState extends State<AddInfoSignUp> {
               SizedBox(
                 height: 2.4 * SizeConfig.blockSizeVertical!,
               ),
-              primaryTextField(name: 'Full Name'),
+              primaryTextField(
+                  controller: _fullNameController,
+                  name: AppLanguage.strings.fullNameTextField),
               SizedBox(
                 height: 2.4 * SizeConfig.blockSizeVertical!,
               ),
               BlocBuilder<StateCubit, bool>(
                 bloc: _selectedGender,
                 builder: (context, stateGender) {
+                  print('gendre $gendreSelected');
                   return InkWell(
                     overlayColor: MaterialStateProperty.all(Colors.transparent),
                     onTap: () {
@@ -129,7 +147,9 @@ class _AddInfoSignUpState extends State<AddInfoSignUp> {
                           });
                     },
                     child: primaryTextField(
-                        name: 'Gender',
+                        controller: _genderController,
+                        initialValue: gendreSelected,
+                        name: AppLanguage.strings.genderTextField,
                         enabled: false,
                         suffixIcon: IconButton(
                             onPressed: () {
@@ -157,26 +177,52 @@ class _AddInfoSignUpState extends State<AddInfoSignUp> {
               SizedBox(
                 height: 2.4 * SizeConfig.blockSizeVertical!,
               ),
-              InkWell(
-                  onTap: () {
-                    showDatePicker(
-                        context: context,
-                        initialDate: DateTime.now(),
-                        firstDate: DateTime(1900),
-                        lastDate: DateTime.now());
-                  },
-                  child:
-                      primaryTextField(name: 'Date of Birth', enabled: false)),
+              BlocBuilder<StateCubit, bool>(
+                bloc: _selectedBrithDay,
+                builder: (context, state) {
+                  return InkWell(
+                      onTap: () async {
+                        DateTime? daySelected = await showDatePicker(
+                          context: context,
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime(1900),
+                          lastDate: DateTime.now(),
+                        );
+                        if (daySelected != null) {
+                          brithDaySelected = DateFormat('dd-MM-yyyy',
+                                  context.read<AppLanguageCubit>().state)
+                              .format(daySelected);
+                        }
+                        _selectedBrithDay.setBlocState(
+                            newState: !_selectedBrithDay.state);
+                      },
+                      child: primaryTextField(
+                        initialValue: brithDaySelected ??
+                            DateFormat('dd-MM-yyyy',
+                                    context.read<AppLanguageCubit>().state)
+                                .format(DateTime.now().toLocal()),
+                        controller: _brithDayController,
+                        name: AppLanguage.strings.brithDayTextField,
+                        enabled: false,
+                      ));
+                },
+              ),
               SizedBox(
                 height: 2.4 * SizeConfig.blockSizeVertical!,
               ),
-              primaryTextField(name: 'Address'),
+              primaryTextField(
+                controller: _addressController,
+                name: AppLanguage.strings.addressTextField,
+              ),
               SizedBox(
                 height: 4.8 * SizeConfig.blockSizeVertical!,
               ),
               primaryButton(
-                onTap: () {
+                onTap: () async {
                   showProgresseIndicator(context: context);
+                  await Future.delayed(const Duration(seconds: 2));
+                  Navigator.of(context)
+                      .popAndPushNamed(AppRouter.mainScreenRouter);
                 },
                 text: AppLanguage.strings.nextButton,
               ),

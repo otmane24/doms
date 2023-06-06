@@ -1,8 +1,5 @@
 import 'package:doms/components/alert_dialog/take_appointment.dart';
 import 'package:doms/components/buttons/primary_button.dart';
-import 'package:doms/components/card/selected_item.dart';
-import 'package:doms/components/text_field/multi_line_text_field.dart';
-import 'package:doms/components/text_field/primary_text_field.dart';
 import 'package:doms/constants/strings/constants_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,6 +7,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../assistant_methode/size_config.dart';
 import '../../businnes_logic/cubit/state_cubit.dart';
 import '../../components/alert_dialog/gender_picker.dart';
+import '../../components/card/selected_item.dart';
+import '../../components/text_field/multi_line_text_field.dart';
+import '../../components/text_field/primary_text_field.dart';
 import '../../presentation/colors/color_manager.dart';
 import '../../presentation/laungaes/main.dart';
 import '../../routing/app_routing.dart';
@@ -20,6 +20,10 @@ class PatientDetail extends StatelessWidget {
   String? grangeAgeSelected;
   final StateCubit _selectedGender = StateCubit(false);
   final StateCubit _selectedGrangeAge = StateCubit(false);
+  final TextEditingController _fullNameController = TextEditingController();
+  final TextEditingController _genderController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _problemController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,8 +44,10 @@ class PatientDetail extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                     horizontal: 2.4 * SizeConfig.blockSizeVertical!),
                 child: primaryTextField(
-                    name: AppLanguage.strings.fullNameTextField,
-                    color: ColorManager.light),
+                  controller: _fullNameController,
+                  name: AppLanguage.strings.fullNameTextField,
+                  color: ColorManager.light,
+                ),
               ),
               SizedBox(
                 height: 2.4 * SizeConfig.blockSizeVertical!,
@@ -50,7 +56,7 @@ class PatientDetail extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                     horizontal: 2.4 * SizeConfig.blockSizeVertical!),
                 child: Text(
-                  'Select your age  Range',
+                  AppLanguage.strings.selecteRangeAgeText,
                   style: TextStyle(
                     fontSize: 1.6 * SizeConfig.blockSizeVertical!,
                     fontWeight: FontWeight.w400,
@@ -99,8 +105,10 @@ class PatientDetail extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                     horizontal: 2.4 * SizeConfig.blockSizeVertical!),
                 child: primaryTextField(
-                    name: AppLanguage.strings.phoneTextField,
-                    color: ColorManager.light),
+                  controller: _phoneController,
+                  name: AppLanguage.strings.phoneTextField,
+                  color: ColorManager.light,
+                ),
               ),
               SizedBox(
                 height: 2.4 * SizeConfig.blockSizeVertical!,
@@ -129,9 +137,11 @@ class PatientDetail extends StatelessWidget {
                             });
                       },
                       child: primaryTextField(
-                          name: 'Gender',
-                          enabled: false,
                           color: ColorManager.light,
+                          controller: _genderController,
+                          initialValue: gendreSelected,
+                          name: AppLanguage.strings.genderTextField,
+                          enabled: false,
                           suffixIcon: IconButton(
                               onPressed: () {
                                 showDialog(
@@ -163,10 +173,12 @@ class PatientDetail extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                     horizontal: 2.4 * SizeConfig.blockSizeVertical!),
                 child: multiLineTextField(
-                    name: 'Write your problem', color: ColorManager.light),
+                    controller: _problemController,
+                    name: AppLanguage.strings.whatWrongTextField,
+                    color: ColorManager.light),
               ),
               SizedBox(
-                height: 10 * SizeConfig.blockSizeVertical!,
+                height: 2.4 * SizeConfig.blockSizeVertical!,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
@@ -179,14 +191,16 @@ class PatientDetail extends StatelessWidget {
                                 context: context,
                                 imagePath: '$pngsPath/wchat.png',
                                 massage:
-                                    'You appointment booking successfully completed . Dr.seddik walid will \nMessage you soon',
-                                title: 'Oops , Failed',
-                                textButton: 'Back to home',
-                                isError: true,
+                                    AppLanguage.strings.confirmAppointmentText,
+                                title:
+                                    AppLanguage.strings.valideAppointmentText,
+                                textButton: AppLanguage.strings.backHomeButton,
+                                isError: false,
                                 onTap: () {
                                   Navigator.of(context).pop();
                                   Navigator.of(context).pushNamedAndRemoveUntil(
-                                      AppRouter.homeRouter, (route) => false);
+                                      AppRouter.mainScreenRouter,
+                                      (route) => false);
                                 });
                           },
                         ),

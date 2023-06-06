@@ -1,5 +1,5 @@
+import 'package:doms/businnes_logic/bloc/doctor/doctor_bloc.dart';
 import 'package:doms/components/card/row_card_doctor.dart';
-import 'package:doms/constants/objects/constants_objects.dart';
 import 'package:doms/presentation/colors/color_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,11 +9,26 @@ import '../../businnes_logic/cubit/state_cubit.dart';
 import '../../components/buttons/card_icon_button.dart';
 import '../../constants/strings/constants_strings.dart';
 import '../../presentation/laungaes/main.dart';
+import '../../routing/app_routing.dart';
 
-class ViewAllDoctor extends StatelessWidget {
-  ViewAllDoctor({super.key});
+class ViewAllDoctor extends StatefulWidget {
+  const ViewAllDoctor({super.key});
+
+  @override
+  State<ViewAllDoctor> createState() => _ViewAllDoctorState();
+}
+
+class _ViewAllDoctorState extends State<ViewAllDoctor> {
   String specialtySelected = 'All';
+
   StateCubit selectedState = StateCubit(false);
+  DoctorBloc doctorBloc = DoctorBloc();
+  @override
+  void initState() {
+    doctorBloc.add(const GetDoctor());
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,19 +82,41 @@ class ViewAllDoctor extends StatelessWidget {
             ),
           ),
           SizedBox(height: 2.4 * SizeConfig.blockSizeVertical!),
-          ListView.separated(
-            padding: EdgeInsets.symmetric(
-                horizontal: 2.4 * SizeConfig.blockSizeVertical!),
-            shrinkWrap: true,
-            physics: const BouncingScrollPhysics(),
-            itemCount: topDoctorObjectList2.length,
-            separatorBuilder: (context, index) {
-              return SizedBox(height: 2.4 * SizeConfig.blockSizeVertical!);
-            },
-            itemBuilder: (context, index) {
-              return rowCardDoctor(
-                  topDoctorObject: topDoctorObjectList2[index],
-                  isLiked: topDoctorObjectList2[index].is_like);
+          BlocBuilder<DoctorBloc, DoctorState>(
+            bloc: doctorBloc,
+            builder: (context, state) {
+              if (state is DoctorLoading) {
+                return Container();
+              }
+              if (state is DoctorLoaded) {
+                return Expanded(
+                  child: ListView.separated(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: 2.4 * SizeConfig.blockSizeVertical!),
+                    shrinkWrap: true,
+                    physics: const BouncingScrollPhysics(),
+                    itemCount: state.doctors.length,
+                    separatorBuilder: (context, index) {
+                      return SizedBox(
+                          height: 2.4 * SizeConfig.blockSizeVertical!);
+                    },
+                    itemBuilder: (context, index) {
+                      return rowCardDoctor(
+                          onTap: () => Navigator.of(context).pushNamed(
+                              AppRouter.detailDoctorRouter,
+                              arguments: state.doctors[index]),
+                          doctor: state.doctors[index],
+                          isLiked: state.doctors[index].is_like);
+                    },
+                  ),
+                );
+              }
+              if (state is DoctorError) {
+                return Container(
+                  child: Text(state.message),
+                );
+              }
+              return Container();
             },
           )
         ],

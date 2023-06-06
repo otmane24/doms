@@ -29,6 +29,8 @@ class EnglishStrings extends GlobalStrings {
   String get sendMessageButton => "Send Message";
   @override
   String get yesLogoutButton => "Yes, Logout";
+  @override
+  String get backHomeButton => "Back to home";
 
   // ------------------- Text Field name -------
   @override
@@ -41,6 +43,16 @@ class EnglishStrings extends GlobalStrings {
   String get fullNameTextField => "Full Name";
   @override
   String get phoneTextField => "Phone";
+  @override
+  String get messageTextField => "Message";
+  @override
+  String get genderTextField => "Gender";
+  @override
+  String get whatWrongTextField => "Write your problem";
+  @override
+  String get brithDayTextField => "Date of Birth";
+  @override
+  String get addressTextField => "Address";
 
   // ------------------- On Boarding text -------
   @override
@@ -117,6 +129,15 @@ class EnglishStrings extends GlobalStrings {
   String get invitedText => "Invited";
   @override
   String get confirmLogoutText => "Are you sure want to logout";
+  @override
+  String get selecteRangeAgeText => "Select your age  Range";
+  @override
+  String get confirmAppointmentText =>
+      "You appointment booking successfully completed . Dr.seddik walid will \nMessage you soon";
+  @override
+  String get fieldAppointmentText => "Oops , Failed";
+  @override
+  String get valideAppointmentText => "Well Done";
 
   // ------------------- App Bar Text -------
   @override
@@ -164,6 +185,14 @@ class EnglishStrings extends GlobalStrings {
   @override
   String get viaEmailForgetPasswordText => "Via Email:";
 
+  // ------------------- Item Static Doctor Text -------
+  @override
+  String get patientStaticDoctorText => "Patients";
+  @override
+  String get experienceStaticDoctorText => "Experience";
+  @override
+  String get ratingsStaticDoctorText => "Ratings";
+
   // ------------------- Item Profile Text -------
   @override
   String get notificationProfileText => "Notification";
@@ -197,6 +226,14 @@ class EnglishStrings extends GlobalStrings {
   String get tipsAvailableNotificationSettingText => "New tips available";
   @override
   String get serviceAvailbleNotificationSettingText => "New service Availble";
+
+  // ------------------- Item Security Setting Text -------
+  @override
+  String get faceIdSecuritySettingText => "Face ID";
+  @override
+  String get rememberMeSecuritySettingText => "Remember me";
+  @override
+  String get touchIdSecuritySettingText => "Touch ID";
 
   // ------------------- Item Fee Information Text -------
   @override
@@ -232,4 +269,18 @@ class EnglishStrings extends GlobalStrings {
   String get cameraAlertText => "Camera";
   @override
   String get galerieAlertText => "Gallery";
+
+  // ------------------- Nav Bottom Text -------
+  @override
+  String get homeBottomText => "Home";
+  @override
+  String get appointmentBottomText => "Appointment";
+  @override
+  String get historyBottomText => "History";
+  @override
+  String get profileBottomText => "Profile";
+
+  // ------------------- Alert Dialog Text -------
+  @override
+  String get responseErrorText => "Connection error, please try again";
 }

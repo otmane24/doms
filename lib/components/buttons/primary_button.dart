@@ -1,3 +1,4 @@
+import 'package:doms/assistant_methode/size_config.dart';
 import 'package:flutter/material.dart';
 
 import '../../presentation/colors/color_manager.dart';
@@ -7,7 +8,7 @@ Widget primaryButton(
   return InkWell(
     onTap: enable ? () {} : onTap,
     child: Container(
-      height: 55,
+      height: 5.4 * SizeConfig.blockSizeVertical!,
       width: double.infinity,
       decoration: BoxDecoration(
         gradient: LinearGradient(

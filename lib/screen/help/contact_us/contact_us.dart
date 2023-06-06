@@ -8,8 +8,10 @@ import '../../../presentation/colors/color_manager.dart';
 import '../../../presentation/laungaes/main.dart';
 
 class ContactUs extends StatelessWidget {
-  const ContactUs({super.key});
-
+  ContactUs({super.key});
+  final TextEditingController _fullNameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _messageController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,18 +29,23 @@ class ContactUs extends StatelessWidget {
             Column(
               children: [
                 primaryTextField(
+                  controller: _fullNameController,
                   name: AppLanguage.strings.fullNameTextField,
                 ),
                 SizedBox(
                   height: 2 * SizeConfig.blockSizeVertical!,
                 ),
                 primaryTextField(
+                  controller: _emailController,
                   name: AppLanguage.strings.emailTextField,
                 ),
                 SizedBox(
                   height: 2 * SizeConfig.blockSizeVertical!,
                 ),
-                multiLineTextField(name: 'Message')
+                multiLineTextField(
+                  name: AppLanguage.strings.messageTextField,
+                  controller: _messageController,
+                ),
               ],
             ),
             primaryButton(

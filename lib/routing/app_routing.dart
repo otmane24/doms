@@ -1,5 +1,5 @@
 class AppRouter {
-  static const String homeRouter = '/homeRouter';
+  static const String mainScreenRouter = '/mainScreenRouter';
   static const String authRouter = '/authRouter';
   static const String onBoardingRouter = '/onBoardingRouter';
   static const String signInRouter = '/signInRouter';
@@ -15,7 +15,6 @@ class AppRouter {
   static const String detailDoctorRouter = '/detailDoctorRouter';
   static const String appointmentRouter = '/appointmentRouter';
   static const String patientDetailRouter = '/patientDetailRouter';
-  static const String profileRouter = '/profileRouter';
   static const String notificationSettingRouter = '/notificationSettingRouter';
   static const String securitySettingRouter = '/securitySettingRouter';
   static const String appearanceSettingRouter = '/appearanceSettingRouter';

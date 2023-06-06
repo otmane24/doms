@@ -25,7 +25,10 @@ Widget pageViewItem(
             width: double.infinity,
             color: sliderObjet.backgroundColor,
           ),
-          Image.asset(sliderObjet.image),
+          Image.asset(
+            sliderObjet.image,
+            fit: BoxFit.fill,
+          ),
         ],
       ),
       Container(
@@ -91,6 +94,9 @@ Widget pageViewItem(
                         Navigator.pushNamed(context, AppRouter.signUpRouter);
                       },
                       text: AppLanguage.strings.signUpButton),
+                  SizedBox(
+                    height: 2.4 * SizeConfig.blockSizeVertical!,
+                  ),
                 ],
               ),
             ],

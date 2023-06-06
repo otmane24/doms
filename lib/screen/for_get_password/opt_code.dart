@@ -21,6 +21,7 @@ class OtpCode extends StatelessWidget {
   Widget build(BuildContext context) {
     timerBloc.add(const TimerStarted(duration: 60));
     return Scaffold(
+      backgroundColor: ColorManager.light,
       appBar: AppBar(
         title: Text(AppLanguage.strings.forGetPasswordAppBarText),
       ),

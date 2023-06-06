@@ -36,7 +36,7 @@ class SecuritySetting extends StatelessWidget {
                   thickness: 1,
                 ),
                 settingItem(
-                  name: AppLanguage.strings.notificationNotificationSettingText,
+                  name: AppLanguage.strings.faceIdSecuritySettingText,
                   notificationSetting: faceId,
                   onChanged: (value) {
                     faceId = value;
@@ -47,7 +47,7 @@ class SecuritySetting extends StatelessWidget {
                   thickness: 1,
                 ),
                 settingItem(
-                  name: AppLanguage.strings.vibrateNotificationSettingText,
+                  name: AppLanguage.strings.rememberMeSecuritySettingText,
                   notificationSetting: rememberMe,
                   onChanged: (value) {
                     rememberMe = value;
@@ -58,8 +58,7 @@ class SecuritySetting extends StatelessWidget {
                   thickness: 1,
                 ),
                 settingItem(
-                  name:
-                      AppLanguage.strings.tipsAvailableNotificationSettingText,
+                  name: AppLanguage.strings.touchIdSecuritySettingText,
                   notificationSetting: touchId,
                   onChanged: (value) {
                     touchId = value;

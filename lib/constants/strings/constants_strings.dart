@@ -1,9 +1,5 @@
 /// Url
-const baseUrl = "https://api.themoviedb.org/3";
-
-const baseUrlPicture = "https://image.tmdb.org/t/p/original";
-
-/// Api Key of WordPresseyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNDljZDI1MzZiYTllN2IzNDYwMGFjYTBlMmQ2ZDRkYyIsInN1YiI6IjY0NmU4ZmUyMDcyMTY2MDExN2VlYTk2YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.C_JRR31WhoHEgXO6o611QOkglBXlXlmIVdnJtMw9CCA";
+const baseUrl = "https://647bc2afc0bae2880ad03c30.mockapi.io";
 
 /// Hive Box && Key
 const settingsBoxHive = "settings";

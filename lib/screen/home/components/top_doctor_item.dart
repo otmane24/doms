@@ -1,13 +1,13 @@
-import 'package:doms/screen/home/components/top_doctor_object.dart';
+import 'package:doms/models/doctor.dart';
+
 import 'package:flutter/material.dart';
 
 import '../../../assistant_methode/size_config.dart';
+import '../../../constants/strings/constants_strings.dart';
 import '../../../presentation/colors/color_manager.dart';
 
 Widget doctorItem(
-    {required DoctorObject topDoctorObject,
-    required Function() onTap,
-    double? width}) {
+    {required Doctor doctor, required Function() onTap, double? width}) {
   return InkWell(
     onTap: onTap,
     child: Container(
@@ -26,7 +26,7 @@ Widget doctorItem(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          topDoctorObject.is_online
+          doctor.is_online!
               ? Stack(
                   alignment: Alignment.topRight,
                   children: [
@@ -38,9 +38,26 @@ Widget doctorItem(
                       width: 7.8 * SizeConfig.blockSizeVertical!,
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(90),
-                          child: Image.asset(
-                            topDoctorObject.imagePath,
+                          child: Image.network(
+                            doctor.imagePath,
                             fit: BoxFit.fill,
+                            errorBuilder: (context, error, stackTrace) {
+                              return Image.asset('$pngsPath/avatar.jpg',
+                                  fit: BoxFit.cover);
+                            },
+                            loadingBuilder: (BuildContext context, Widget child,
+                                ImageChunkEvent? loadingProgress) {
+                              if (loadingProgress == null) return child;
+                              return Center(
+                                child: CircularProgressIndicator(
+                                  value: loadingProgress.expectedTotalBytes !=
+                                          null
+                                      ? loadingProgress.cumulativeBytesLoaded /
+                                          loadingProgress.expectedTotalBytes!
+                                      : null,
+                                ),
+                              );
+                            },
                           )),
                     ),
                     Positioned(
@@ -67,16 +84,34 @@ Widget doctorItem(
                   width: 7.8 * SizeConfig.blockSizeVertical!,
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(90),
-                      child: Image.asset(
-                        topDoctorObject.imagePath,
+                      child: Image.network(
+                        doctor.imagePath,
                         fit: BoxFit.fill,
+                        errorBuilder: (context, error, stackTrace) {
+                          return Image.asset('$pngsPath/avatar.jpg',
+                              fit: BoxFit.cover);
+                        },
+                        loadingBuilder: (BuildContext context, Widget child,
+                            ImageChunkEvent? loadingProgress) {
+                          if (loadingProgress == null) return child;
+                          return Center(
+                            child: CircularProgressIndicator(
+                              value: loadingProgress.expectedTotalBytes != null
+                                  ? loadingProgress.cumulativeBytesLoaded /
+                                      loadingProgress.expectedTotalBytes!
+                                  : null,
+                            ),
+                          );
+                        },
                       )),
                 ),
           SizedBox(
             height: 2 * SizeConfig.blockSizeVertical!,
           ),
           Text(
-            topDoctorObject.name,
+            doctor.name,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: TextStyle(
               color: ColorManager.darkBlueText,
               fontWeight: FontWeight.w400,
@@ -87,7 +122,7 @@ Widget doctorItem(
             height: .8 * SizeConfig.blockSizeVertical!,
           ),
           Text(
-            topDoctorObject.specialty,
+            doctor.specialty,
             style: TextStyle(
               color: ColorManager.blueGreyText,
               fontWeight: FontWeight.w500,
@@ -98,7 +133,7 @@ Widget doctorItem(
             height: .8 * SizeConfig.blockSizeVertical!,
           ),
           Text(
-            '⭐️ ${topDoctorObject.vote_average} (${topDoctorObject.vote_count} reviews)',
+            '⭐️ 4.5 (${doctor.vote_count > 1000 ? '1k+' : doctor.vote_count} reviews)',
             style: TextStyle(
               color: ColorManager.blueGreyText,
               fontWeight: FontWeight.w500,

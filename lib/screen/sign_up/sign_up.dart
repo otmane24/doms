@@ -1,5 +1,4 @@
 import 'package:doms/components/buttons/primary_button.dart';
-import 'package:doms/components/text_field/primary_text_field.dart';
 import 'package:doms/constants/strings/constants_strings.dart';
 import 'package:doms/presentation/colors/color_manager.dart';
 import 'package:doms/presentation/laungaes/main.dart';
@@ -7,11 +6,12 @@ import 'package:flutter/material.dart';
 
 import '../../assistant_methode/size_config.dart';
 import '../../components/text_field/obscure_text_field.dart';
+import '../../components/text_field/primary_text_field.dart';
 import '../../routing/app_routing.dart';
 
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({super.key});
-
+  final TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController ConfrimPasswordController = TextEditingController();
 
@@ -48,19 +48,24 @@ class SignUpScreen extends StatelessWidget {
               SizedBox(
                 height: 5 * SizeConfig.blockSizeVertical!,
               ),
-              primaryTextField(name: AppLanguage.strings.emailTextField),
+              primaryTextField(
+                controller: emailController,
+                name: AppLanguage.strings.emailTextField,
+              ),
               SizedBox(
                 height: 1.6 * SizeConfig.blockSizeVertical!,
               ),
               obscureTextField(
-                  name: AppLanguage.strings.passwordTextField,
-                  controller: passwordController),
+                controller: passwordController,
+                name: AppLanguage.strings.passwordTextField,
+              ),
               SizedBox(
                 height: 1.6 * SizeConfig.blockSizeVertical!,
               ),
               obscureTextField(
-                  name: AppLanguage.strings.confirmPasswordTextField,
-                  controller: ConfrimPasswordController),
+                controller: ConfrimPasswordController,
+                name: AppLanguage.strings.confirmPasswordTextField,
+              ),
               SizedBox(
                 height: 4 * SizeConfig.blockSizeVertical!,
               ),

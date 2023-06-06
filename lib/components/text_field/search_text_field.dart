@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../../assistant_methode/size_config.dart';
 import '../../constants/strings/constants_strings.dart';
 import '../../presentation/colors/color_manager.dart';
 
-TextFormField searchTextField({required FocusNode focusNode}) {
+TextFormField searchTextField(
+    {required FocusNode focusNode, required TextEditingController controller}) {
   return TextFormField(
+    controller: controller,
     focusNode: focusNode,
     keyboardType: TextInputType.text,
     decoration: InputDecoration(
@@ -17,7 +20,8 @@ TextFormField searchTextField({required FocusNode focusNode}) {
           child: Image.asset('$pngsPath/search.png'),
         ),
       ),
-      contentPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+      contentPadding: EdgeInsets.symmetric(
+          horizontal: 24, vertical: 1.2 * SizeConfig.blockSizeVertical!),
       hintText: 'Search',
     ),
   );

@@ -1,5 +1,4 @@
 import 'package:doms/components/buttons/primary_button.dart';
-import 'package:doms/components/text_field/primary_text_field.dart';
 import 'package:doms/constants/strings/constants_strings.dart';
 import 'package:doms/presentation/colors/color_manager.dart';
 import 'package:doms/presentation/laungaes/main.dart';
@@ -8,10 +7,18 @@ import 'package:flutter/material.dart';
 
 import '../../assistant_methode/size_config.dart';
 import '../../components/text_field/obscure_text_field.dart';
+import '../../components/text_field/primary_text_field.dart';
 import '../../routing/app_routing.dart';
 
-class SignInScreen extends StatelessWidget {
-  SignInScreen({super.key});
+class SignInScreen extends StatefulWidget {
+  const SignInScreen({super.key});
+
+  @override
+  State<SignInScreen> createState() => _SignInScreenState();
+}
+
+class _SignInScreenState extends State<SignInScreen> {
+  TextEditingController emailController = TextEditingController();
 
   TextEditingController passwordController = TextEditingController();
 
@@ -48,7 +55,10 @@ class SignInScreen extends StatelessWidget {
               SizedBox(
                 height: 4 * SizeConfig.blockSizeVertical!,
               ),
-              primaryTextField(name: AppLanguage.strings.emailTextField),
+              primaryTextField(
+                controller: emailController,
+                name: AppLanguage.strings.emailTextField,
+              ),
               SizedBox(
                 height: 1.6 * SizeConfig.blockSizeVertical!,
               ),
@@ -61,7 +71,7 @@ class SignInScreen extends StatelessWidget {
               primaryButton(
                 onTap: () {
                   Navigator.of(context)
-                      .pushReplacementNamed(AppRouter.homeRouter);
+                      .pushReplacementNamed(AppRouter.mainScreenRouter);
                 },
                 text: AppLanguage.strings.signInButton,
               ),
@@ -98,13 +108,25 @@ class SignInScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Expanded(
-                    child: socialButton(nameButton: 'Facebook'),
+                    child: socialButton(
+                      nameButton: 'Facebook',
+                      onTap: () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            snackBarModel(title: 'Bientôt disponible'));
+                      },
+                    ),
                   ),
                   SizedBox(
                     width: 3 * SizeConfig.blockSizeVertical!,
                   ),
                   Expanded(
-                    child: socialButton(nameButton: 'Google'),
+                    child: socialButton(
+                      nameButton: 'Google',
+                      onTap: () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            snackBarModel(title: 'Bientôt disponible'));
+                      },
+                    ),
                   ),
                 ],
               ),
@@ -134,6 +156,27 @@ class SignInScreen extends StatelessWidget {
               )
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  SnackBar snackBarModel({required String title}) {
+    return SnackBar(
+      duration: const Duration(seconds: 5),
+      behavior: SnackBarBehavior.floating,
+      elevation: 0,
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(16))),
+      margin: const EdgeInsets.symmetric(horizontal: 20),
+      backgroundColor: Colors.black.withOpacity(.7),
+      content: Text(
+        title,
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 1.8 * SizeConfig.blockSizeVertical!,
+          fontWeight: FontWeight.w500,
         ),
       ),
     );

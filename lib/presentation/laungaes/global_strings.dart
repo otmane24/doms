@@ -14,6 +14,7 @@ abstract class GlobalStrings {
   String get bookAppointmentButton;
   String get sendMessageButton;
   String get yesLogoutButton;
+  String get backHomeButton;
 
   // ------------------- Text Field name -------
   String get emailTextField;
@@ -21,6 +22,11 @@ abstract class GlobalStrings {
   String get confirmPasswordTextField;
   String get fullNameTextField;
   String get phoneTextField;
+  String get messageTextField;
+  String get genderTextField;
+  String get whatWrongTextField;
+  String get brithDayTextField;
+  String get addressTextField;
 
   // ------------------- On Boarding text -------
   String get onBoardingTitle1;
@@ -58,6 +64,10 @@ abstract class GlobalStrings {
   String get inviteText;
   String get invitedText;
   String get confirmLogoutText;
+  String get selecteRangeAgeText;
+  String get confirmAppointmentText;
+  String get fieldAppointmentText;
+  String get valideAppointmentText;
 
   // ------------------- App Bar Text -------
   String get profileDetailsAppBarText;
@@ -84,6 +94,11 @@ abstract class GlobalStrings {
   String get viaSmsForgetPasswordText;
   String get viaEmailForgetPasswordText;
 
+  // ------------------- Item Static Doctor Text -------
+  String get patientStaticDoctorText;
+  String get experienceStaticDoctorText;
+  String get ratingsStaticDoctorText;
+
   // ------------------- Item Profile Text -------
   String get notificationProfileText;
   String get securityProfileText;
@@ -97,6 +112,11 @@ abstract class GlobalStrings {
   String get vibrateNotificationSettingText;
   String get tipsAvailableNotificationSettingText;
   String get serviceAvailbleNotificationSettingText;
+
+  // ------------------- Item Security Setting Text -------
+  String get faceIdSecuritySettingText;
+  String get rememberMeSecuritySettingText;
+  String get touchIdSecuritySettingText;
 
   // ------------------- Item Help  Text -------
   String get FaqHelpText;
@@ -121,4 +141,13 @@ abstract class GlobalStrings {
   String get choseActionAlertText;
   String get cameraAlertText;
   String get galerieAlertText;
+
+  // ------------------- Nav Bottom Text -------
+  String get homeBottomText;
+  String get appointmentBottomText;
+  String get historyBottomText;
+  String get profileBottomText;
+
+  // ------------------- Error Text -------
+  String get responseErrorText;
 }

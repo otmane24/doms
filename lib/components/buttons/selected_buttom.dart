@@ -6,6 +6,7 @@ import '../../presentation/colors/color_manager.dart';
 Widget selectedButton(
     {required Widget child,
     required bool selected,
+    required bool enable,
     required Function() onTap}) {
   return InkWell(
     onTap: onTap,
@@ -20,7 +21,9 @@ Widget selectedButton(
             : ColorManager.lightGreyBackgound,
         borderRadius: BorderRadius.circular(24),
         border: Border.all(
-          color: ColorManager.primaryBlue,
+          color: enable
+              ? ColorManager.primaryBlue
+              : ColorManager.primaryBlue.withOpacity(.5),
         ),
       ),
       child: child,

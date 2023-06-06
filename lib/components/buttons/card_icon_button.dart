@@ -24,8 +24,10 @@ Widget cardIconButton(
         height: height ?? 4.4 * SizeConfig.blockSizeVertical!,
         width: width ?? 4.4 * SizeConfig.blockSizeVertical!,
         child: SvgPicture.asset(
+          height: height ?? 4.4 * SizeConfig.blockSizeVertical!,
+          width: width ?? 4.4 * SizeConfig.blockSizeVertical!,
           imagePath,
-          fit: BoxFit.fill,
+          fit: BoxFit.contain,
         )),
   );
 }

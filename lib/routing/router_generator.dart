@@ -1,3 +1,4 @@
+import 'package:doms/models/doctor.dart';
 import 'package:doms/screen/appearance/appearance.dart';
 import 'package:doms/screen/appointment/appointment.dart';
 import 'package:doms/screen/auth/auth.dart';
@@ -15,7 +16,6 @@ import 'package:doms/screen/invite_friend/invite_friend.dart';
 import 'package:doms/screen/notification/notification.dart';
 import 'package:doms/screen/notification/notification_setting.dart';
 import 'package:doms/screen/patient_detail/patient_detail.dart';
-import 'package:doms/screen/profile/profile.dart';
 import 'package:doms/screen/reset_password/resert_password.dart';
 import 'package:doms/screen/security/security.dart';
 import 'package:doms/screen/sign_in/sign_in.dart';
@@ -26,9 +26,8 @@ import 'package:doms/screen/view_all_special/view_all_special.dart';
 import 'package:flutter/material.dart';
 
 import '../app/app.dart';
-import '../screen/home/components/top_doctor_object.dart';
-import '../screen/home/home.dart';
 
+import '../screen/main_screen.dart/main_screen.dart';
 import 'app_routing.dart';
 
 class RouterGenerator {
@@ -44,7 +43,7 @@ class RouterGenerator {
         );
       case AppRouter.signInRouter:
         return MaterialPageRoute(
-          builder: (_) => SignInScreen(),
+          builder: (_) => const SignInScreen(),
         );
       case AppRouter.forGetPasswordRouter:
         return MaterialPageRoute(
@@ -66,9 +65,9 @@ class RouterGenerator {
         return MaterialPageRoute(
           builder: (_) => const AddInfoSignUp(),
         );
-      case AppRouter.homeRouter:
+      case AppRouter.mainScreenRouter:
         return MaterialPageRoute(
-          builder: (_) => const Home(),
+          builder: (_) => const MainScreen(),
         );
       case AppRouter.notificationRouter:
         return MaterialPageRoute(
@@ -76,24 +75,23 @@ class RouterGenerator {
         );
       case AppRouter.favoriteDoctorRouter:
         return MaterialPageRoute(
-          builder: (_) => FavoriteDoctor(),
+          builder: (_) => const FavoriteDoctor(),
         );
       case AppRouter.viewAllDoctorRouter:
         return MaterialPageRoute(
-          builder: (_) => ViewAllDoctor(),
+          builder: (_) => const ViewAllDoctor(),
         );
       case AppRouter.viewAllSpecialRouter:
         return MaterialPageRoute(
           builder: (_) => ViewAllSpecial(),
         );
       case AppRouter.detailDoctorRouter:
-        final doctorObject = routeSettings.arguments as DoctorObject;
+        final doctorObject = routeSettings.arguments as Doctor;
         return MaterialPageRoute(
           builder: (_) => DetailDoctor(doctorObject: doctorObject),
         );
       case AppRouter.appointmentRouter:
-        final doctorObject =
-            (routeSettings.arguments as List)[0] as DoctorObject;
+        final doctorObject = (routeSettings.arguments as List)[0] as Doctor;
         final dateSelected = (routeSettings.arguments as List)[1] as DateTime;
         return MaterialPageRoute(
           builder: (_) => Appointment(
@@ -105,10 +103,7 @@ class RouterGenerator {
         return MaterialPageRoute(
           builder: (_) => PatientDetail(),
         );
-      case AppRouter.profileRouter:
-        return MaterialPageRoute(
-          builder: (_) => const Profile(),
-        );
+
       case AppRouter.notificationSettingRouter:
         return MaterialPageRoute(
           builder: (_) => NotificationSetting(),
@@ -131,7 +126,7 @@ class RouterGenerator {
         );
       case AppRouter.contactUsRouter:
         return MaterialPageRoute(
-          builder: (_) => const ContactUs(),
+          builder: (_) => ContactUs(),
         );
       case AppRouter.termConditionRouter:
         return MaterialPageRoute(

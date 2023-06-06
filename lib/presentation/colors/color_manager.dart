@@ -25,6 +25,10 @@ class ColorManager {
   static Color onBoradingBackground1 = HexColor.formHex("#93B8FE");
   static Color onBoradingBackground2 = HexColor.formHex("#EDA1AB");
   static Color onBoradingBackground3 = HexColor.formHex("#00DABE");
+  static Color staticDoctorBackground1 = HexColor.formHex("#7AEBFA");
+  static Color staticDoctorBackground2 = HexColor.formHex("#E8899E");
+  static Color staticDoctorBackground3 = HexColor.formHex("#F7C480");
+
   static Color redError = HexColor.formHex("#D81617");
   static Color specialDoctorBackground1 = HexColor.formHex("#4485FD");
   static Color specialDoctorBackground1Op = HexColor.formHex("#639AFF");

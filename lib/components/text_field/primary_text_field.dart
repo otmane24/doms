@@ -6,6 +6,7 @@ import '../../presentation/colors/color_manager.dart';
 Widget primaryTextField(
     {TextEditingController? controller,
     required String name,
+    String? initialValue,
     bool? enabled,
     Color? color,
     Widget? suffixIcon}) {
@@ -33,10 +34,13 @@ Widget primaryTextField(
           fillColor: color,
           filled: color != null,
           suffixIcon: suffixIcon,
-          contentPadding:
-              const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-          hintText: name,
-          hintStyle: TextStyle(color: ColorManager.hintText),
+          contentPadding: EdgeInsets.symmetric(
+              horizontal: 24, vertical: 1.2 * SizeConfig.blockSizeVertical!),
+          hintText: initialValue ?? name,
+          hintStyle: TextStyle(
+              color: initialValue != null
+                  ? ColorManager.darkText
+                  : ColorManager.hintText),
           border: OutlineInputBorder(
             borderSide: BorderSide(color: ColorManager.primaryBlue, width: 1),
             borderRadius: BorderRadius.circular(32),

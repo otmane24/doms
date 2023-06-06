@@ -10,8 +10,8 @@ import '../../presentation/laungaes/main.dart';
 class NotificationSetting extends StatelessWidget {
   NotificationSetting({super.key});
   StateCubit stateCubit = StateCubit(false);
-  bool notification = false;
-  bool vibrate = false;
+  bool notification = true;
+  bool vibrate = true;
   bool tipsAcaialable = false;
   bool serviceAvailble = false;
   @override

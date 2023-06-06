@@ -1,3 +1,4 @@
+import 'package:doms/presentation/laungaes/main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -27,11 +28,13 @@ Widget bottomNavBar(
         onTabChange: onTap,
         style: GnavStyle.google,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        rippleColor: ColorManager.primaryBlue,
-        hoverColor: ColorManager.primaryBlue.withOpacity(.2),
+        rippleColor: ColorManager.primaryBlue.withOpacity(.2),
+        hoverColor: ColorManager.primaryBlue.withOpacity(.1),
         haptic: true,
         tabBorderRadius: 12,
-        tabMargin: EdgeInsets.all(1.6 * SizeConfig.blockSizeVertical!),
+        tabMargin: EdgeInsets.symmetric(
+            horizontal: 1.6 * SizeConfig.blockSizeHorizontal!,
+            vertical: 1.6 * SizeConfig.blockSizeVertical!),
         backgroundColor: ColorManager.bottomBackgound,
         tabShadow: [
           BoxShadow(
@@ -39,35 +42,35 @@ Widget bottomNavBar(
         ],
         curve: Curves.easeOutExpo,
         duration: const Duration(milliseconds: 300),
-        gap: 1.6 * SizeConfig.blockSizeVertical!,
+        gap: SizeConfig.blockSizeHorizontal!,
         color: ColorManager.primaryBlue,
         activeColor: ColorManager.primaryBlue,
         iconSize: 24,
         tabBackgroundColor: ColorManager.primaryBlue.withOpacity(0.1),
         padding: EdgeInsets.symmetric(
-          horizontal: 1.6 * SizeConfig.blockSizeVertical!,
+          horizontal: 1 * SizeConfig.blockSizeVertical!,
           vertical: .8 * SizeConfig.blockSizeVertical!,
         ),
         tabs: [
           GButton(
             leading: Image.asset('$pngsPath/home.png'),
             icon: Icons.javascript_rounded,
-            text: 'Home',
+            text: AppLanguage.strings.homeBottomText,
           ),
           GButton(
             icon: Icons.javascript_rounded,
             leading: Image.asset('$pngsPath/barnav1.png'),
-            text: 'Likes',
+            text: AppLanguage.strings.appointmentBottomText,
           ),
           GButton(
             icon: Icons.search,
             leading: Image.asset('$pngsPath/barnav2.png'),
-            text: 'Search',
+            text: AppLanguage.strings.historyBottomText,
           ),
           GButton(
             leading: Image.asset('$pngsPath/barnav3.png'),
             icon: Icons.propane,
-            text: 'Profile',
+            text: AppLanguage.strings.profileBottomText,
           )
         ]),
   );
